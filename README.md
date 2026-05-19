@@ -214,7 +214,7 @@ estereo.mono2estereo("mono_izq.wav", "mono_der.wav", "reconstruido.wav")
 
 estereo.codEstereo("wav_komm.wav", "codificado.wav")
 estereo.decEstereo("codificado.wav", "decodificado.wav")
-
+```
 #### Código desarrollado
 
 Inserte a continuación el código de los métodos desarrollados en esta tarea, usando los comandos necesarios
