@@ -200,7 +200,20 @@ Para ello, se recomienda usar la canción [Komm, gib mir deine Hand](wav/komm.wa
 De todos modos, recuerde que, aunque sea en alemán, se trata de los Beatles, así que procure no destrozar
 innecesariamente la canción.
 
-Para comprobar el funcionamiento de las funciones desarrolladas, se ha utilizado el fichero `wav_komm.wav`. A partir de este fichero se han generado correctamente los ficheros mono, el fichero estéreo reconstruido, el fichero codificado en 32 bits y el fichero decodificado, comprobando posteriormente que todos podían reproducirse correctamente.
+Para comprobar el funcionamiento de las funciones desarrolladas, se ha ejecutado el siguiente código desde JupyterLab:
+
+```python
+import estereo
+
+estereo.estereo2mono("wav_komm.wav", "mono_izq.wav", 0)
+estereo.estereo2mono("wav_komm.wav", "mono_der.wav", 1)
+estereo.estereo2mono("wav_komm.wav", "mono_suma.wav")
+estereo.estereo2mono("wav_komm.wav", "mono_dif.wav", 3)
+
+estereo.mono2estereo("mono_izq.wav", "mono_der.wav", "reconstruido.wav")
+
+estereo.codEstereo("wav_komm.wav", "codificado.wav")
+estereo.decEstereo("codificado.wav", "decodificado.wav")
 
 #### Código desarrollado
 
@@ -325,6 +338,11 @@ def _a_entero_16(valor):
     """Convierte los 16 bits menos significativos en entero con signo."""
     return valor - 65536 if valor >= 32768 else valor
 ```
+
+![Comprobación del funcionamiento](img/comprobacion_funcionamiento.png)
+
+Para comprobar el funcionamiento de las funciones desarrolladas, se ha utilizado el fichero `wav_komm.wav`. A partir de este fichero se han generado correctamente los ficheros mono, el fichero estéreo reconstruido, el fichero codificado en 32 bits y el fichero decodificado, comprobando posteriormente que todos podían reproducirse correctamente.
+
 
 ##### Código de `estereo2mono()`
 ```python
