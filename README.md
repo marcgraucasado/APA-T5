@@ -215,6 +215,11 @@ estereo.mono2estereo("mono_izq.wav", "mono_der.wav", "reconstruido.wav")
 estereo.codEstereo("wav_komm.wav", "codificado.wav")
 estereo.decEstereo("codificado.wav", "decodificado.wav")
 ```
+
+![Comprobación del funcionamiento](img/comprobacion_funcionamiento.png)
+
+Para comprobar el funcionamiento de las funciones desarrolladas, se ha utilizado el fichero `wav_komm.wav`. A partir de este fichero se han generado correctamente los ficheros mono, el fichero estéreo reconstruido, el fichero codificado en 32 bits y el fichero decodificado, comprobando posteriormente que todos podían reproducirse correctamente.
+
 #### Código desarrollado
 
 Inserte a continuación el código de los métodos desarrollados en esta tarea, usando los comandos necesarios
@@ -338,11 +343,6 @@ def _a_entero_16(valor):
     """Convierte los 16 bits menos significativos en entero con signo."""
     return valor - 65536 if valor >= 32768 else valor
 ```
-
-![Comprobación del funcionamiento](img/comprobacion_funcionamiento.png)
-
-Para comprobar el funcionamiento de las funciones desarrolladas, se ha utilizado el fichero `wav_komm.wav`. A partir de este fichero se han generado correctamente los ficheros mono, el fichero estéreo reconstruido, el fichero codificado en 32 bits y el fichero decodificado, comprobando posteriormente que todos podían reproducirse correctamente.
-
 
 ##### Código de `estereo2mono()`
 ```python
